@@ -67,4 +67,14 @@ public class EventoController {
         }
         return ResponseEntity.notFound().build();
     }
+
+    @GetMapping("/tipo/{tipoEvento}")
+    public List<Evento> listarPorTipoEvento(@PathVariable String tipoEvento) {
+        return service.listarPorTipoEvento(tipoEvento);
+    }
+
+    @GetMapping("/buscar")
+    public List<Evento> buscarPorNombre(@RequestParam String nombre) {
+        return service.buscarPorNombre(nombre);
+    }
 }

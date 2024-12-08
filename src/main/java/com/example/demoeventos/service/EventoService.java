@@ -31,4 +31,11 @@ public class EventoService {
     public void eliminarEvento(Long id) {
         repository.deleteById(id);
     }
+
+    public List<Evento> listarPorTipoEvento(String tipoEvento) {
+        return repository.findByTipoEvento(tipoEvento);
+    }
+    public List<Evento> buscarPorNombre(String nombre) {
+        return repository.findByNombreContainingIgnoreCase(nombre);
+    }
 }
